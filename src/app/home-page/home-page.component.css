@@ -1,0 +1,208 @@
+.root-grid{
+    display: grid;
+    grid-template-rows: 64px auto 12px auto;
+    grid-template-columns: 64px auto;
+    grid-column-gap: 6px;
+    grid-row-gap: 6px;
+    padding: 12px;
+    align-content: center;
+    justify-content: center; 
+    background: whitesmoke;
+    margin: 8px 0px;
+    height: auto;
+}
+
+.group-header-row{
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    grid-template-columns: repeat(18, 64px);
+    grid-column-gap: 6px;
+    display: grid;
+}
+
+.period-header-column{
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    grid-template-rows: repeat(7, 64px);
+    grid-row-gap: 6px;
+    display: grid;
+}
+
+.item{
+    height: 64px;
+    background: white;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: 150ms linear;
+    cursor: pointer;
+}
+
+.group-name{
+    line-height: 100%;
+}
+
+.elements-table{
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+    display: grid;
+    grid-template-columns: repeat(18, 64px);
+    grid-template-rows: repeat(7, 64px);
+    grid-column-gap: 6px;
+    grid-row-gap: 6px;
+}
+
+.element-symbol{
+    margin: 0px;
+    display: block;
+}
+
+.element-name{
+    text-align: center;
+    font-size: x-small;
+    display: block;
+}
+
+.element-atomic-number{
+    text-align: center;
+    font-size: x-small;
+    font-weight: 600;
+    display: block;
+}
+
+.element-atomic-weight{
+    text-align: center;
+    font-size: x-small;
+    display: block;
+}
+
+.off-elements-table{
+    grid-row: 4 / 5;
+    grid-column: 2 / 3;
+    display: grid;
+    grid-template-columns: repeat(18, 64px);
+    grid-template-rows: repeat(2, 64px);
+    grid-column-gap: 6px;
+    grid-row-gap: 6px;
+}
+
+.alkali{
+    background: lightgreen !important;
+}
+
+.alkaline{
+    background:hsl(120, 73%, 85%) !important;
+}
+
+.metal{
+    background: red;
+}
+
+.transition{
+    background: hsl(351, 100%, 92%);
+
+}
+
+.post-transition{
+    background: lightpink;
+
+}
+
+.nonmetal{
+    background: lightyellow
+}
+
+.metalloid{
+    background: silver;
+}
+
+.noble{
+    background: lightblue;
+}
+
+.probably{
+    background: lightgray !important;
+}
+
+.lanthanide{
+    background: lightsteelblue
+}
+
+.actinide{
+    background: hsl(214, 41%, 85%);
+}
+
+.off-elements-placeholder{
+    text-align: center; 
+    line-height: 64px;
+    background: transparent;
+}
+
+.Solid{
+    color:  black;
+}
+
+.Liquid{
+    color:  green;
+
+}
+
+.Gas{
+    color:  hotpink;
+
+}
+
+.Unknown{
+    color:  slategray;
+
+}
+
+.header-even{
+    background: rgb(245, 240, 240);
+}
+
+.header-odd{
+    background: rgb(235, 235, 235);
+}
+
+.item:hover{
+    transform: scale(1.5);
+}
+
+.active-element{
+    grid-column: 3 / 5;
+    grid-row: 2 / 4;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+}
+
+.active-element-symbol{
+    margin: 0px;
+    display: block;
+    font-size: xx-large;
+}
+
+.active-element-name{
+    text-align: center;
+    font-size: x-large;
+    display: block;
+}
+
+.active-element-atomic-number{
+    text-align: center;
+    font-size: x-large;
+    font-weight: 600;
+    display: block;
+}
+
+.active-element-atomic-weight{
+    text-align: center;
+    font-size: large;
+    display: block;
+}
+
+.group-selected{
+    border: 1px solid black;
+}

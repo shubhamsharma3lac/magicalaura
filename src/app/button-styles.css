@@ -1,0 +1,33 @@
+
+.button{
+    height: 36px;
+    align-self: center;
+    margin-right: 12px;
+    background: transparent;
+    cursor: pointer;
+    outline: 0px;
+    transition: 200ms linear;
+    font-size: medium;
+    color: seagreen;
+}
+
+.without-border{
+    border: 0px;
+
+}
+
+.without-border:hover{
+    color: seagreen;
+}
+
+.with-border{
+    border: 2px solid seagreen;
+    border-radius: 4px;
+    color: seagreen
+}
+
+.with-border:hover{
+    color: white;
+    background: seagreen;
+}
+
