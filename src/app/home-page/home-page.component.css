@@ -1,6 +1,6 @@
 .root-grid{
     display: grid;
-    grid-template-rows: 64px auto 12px auto;
+    grid-template-rows: 64px auto 12px auto auto;
     grid-template-columns: 64px auto;
     grid-column-gap: 6px;
     grid-row-gap: 6px;
@@ -9,7 +9,7 @@
     justify-content: center; 
     background: whitesmoke;
     margin: 8px 0px;
-    height: auto;
+    height: 100%;
 }
 
 .group-header-row{

@@ -1,7 +1,7 @@
 .app-grid{
     height: 100%;
     display: grid;
-    grid-template-rows: 90px 25px 0px;
+    grid-template-rows: 90px 25px auto;
 }
 
 .header-flex-grid{

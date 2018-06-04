@@ -1,6 +1,7 @@
-import "./data.json";
+
 import { HttpClient } from '@angular/common/http'
 import { PeriodicTableService } from "./periodic-table.service";
+import { Data } from '../assets/data';
 
 export class PeriodicTable {
 
@@ -30,42 +31,32 @@ export class PeriodicTable {
         }
 
         var that = this; // Preserve context
-        this.getJSON().then((res) => {
-            var elements = res.elements;
-            elements.forEach((element) => {
+
+        let elements = this.getJSON();
+        elements.forEach((element) => {
 
 
-                if ((element.number > 56 && element.number < 72) ||
-                    (element.number > 88 && element.number < 104)) {
+            if ((element.number > 56 && element.number < 72) ||
+                (element.number > 88 && element.number < 104)) {
+                element.style = {
+                    'grid-column': element.xpos + 1
+                }
+                that.offelements.push(element);
+
+            }
+            else {
+                if (element.number !== 119) {
                     element.style = {
-                        'grid-column': element.xpos + 1
+                        'grid-column': element.xpos
                     }
-                    that.offelements.push(element);
-
+                    that.elements.push(element);
                 }
-                else {
-                    if (element.number !== 119) {
-                        element.style = {
-                            'grid-column': element.xpos
-                        }
-                        that.elements.push(element);
-                    }
-                }
-            });
+            }
         });
     }
 
     getJSON() {
-        let promise = new Promise<any>((resolve, reject) => {
-            this.http.get('./assets/data.json').toPromise()
-                .then((result) => {
-                    resolve(result);
-                }, (err) => {
-                    reject(err);
-                })
-        })
-
-        return promise;
+        return new Data().elements;
     }
 }
 
