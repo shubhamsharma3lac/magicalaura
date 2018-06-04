@@ -95,7 +95,7 @@
 }
 
 .metal{
-    background: red;
+    background: gainsboro;
 }
 
 .transition{
@@ -206,3 +206,49 @@
 .group-selected{
     border: 1px solid black;
 }
+
+.legend{
+    height: 64px;
+    background: white;
+    grid-column: 2 / 3;
+    grid-row: 5;
+    grid-template-columns: auto auto auto auto;
+}
+
+.legend-metals{
+    grid-column: 1 / 2;
+    background: gainsboro;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    grid-template-rows: auto auto;
+    text-align: center;
+    width: auto
+}
+
+.legend-metalloid{
+    grid-column: 2 / 3;
+}
+
+.legend-nonmetals{
+    grid-column: 3 / 4;
+}
+
+.legend-metals{
+    grid-column: 4 / 5;
+}
+
+.legend-header{
+    margin: 0px;
+    text-align: justify;
+    font-size: small;
+    font-weight: 600;
+}
+
+.legend-item{
+    font-size: x-small;
+    font-weight: 500;
+    background: mediumspringgreen;
+    padding: 4px 2px;
+}
+
+
