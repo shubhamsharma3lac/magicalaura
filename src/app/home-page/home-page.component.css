@@ -113,7 +113,7 @@
 }
 
 .metalloid{
-    background: silver;
+    background: hsl(17, 100%, 90%);
 }
 
 .noble{
@@ -208,47 +208,91 @@
 }
 
 .legend{
-    height: 64px;
+    height: auto;
     background: white;
+    display: grid;
     grid-column: 2 / 3;
-    grid-row: 5;
+    grid-row-start: 5;
     grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto auto;
+    text-align: center;
 }
 
 .legend-metals{
-    grid-column: 1 / 2;
     background: gainsboro;
     display: grid;
     grid-template-columns: auto auto auto auto auto auto;
     grid-template-rows: auto auto;
     text-align: center;
-    width: auto
+    grid-column: 1 / 2;
 }
 
 .legend-metalloid{
     grid-column: 2 / 3;
+    background: hsl(17, 100%, 90%);
+    text-align: center;
+    width: auto;
 }
 
 .legend-nonmetals{
     grid-column: 3 / 4;
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: auto auto;
 }
 
-.legend-metals{
+.legend-unknown{
     grid-column: 4 / 5;
+    background: lightgray;
 }
 
 .legend-header{
     margin: 0px;
-    text-align: justify;
     font-size: small;
     font-weight: 600;
+    padding: 8px;
 }
 
 .legend-item{
     font-size: x-small;
     font-weight: 500;
-    background: mediumspringgreen;
     padding: 4px 2px;
+}
+
+.legend-state{
+    grid-row: 2 / 3;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    text-align: center;
+    margin-top: 8px 
+}
+
+.legend-state-item{
+    padding: 8px;
+    font-size: small;
+    font-weight: 500;
+}
+
+.header-name-root{
+    text-align: center;
+    background: transparent;
+}
+
+.header-name-group{
+    font-size: small;
+    position: relative;
+    text-align: center;
+    transform: rotate(-90deg);
+    top: 13px;
+    left: 25px;
+}
+
+.header-name-period{
+    font-size: small;
+    position: relative;
+    text-align: center;
+    left: -12px;
+    top: 32px;
 }
 
 

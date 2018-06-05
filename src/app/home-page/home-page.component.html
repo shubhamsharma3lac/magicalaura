@@ -1,5 +1,8 @@
 <div class="root-grid">
-  <div class="item"></div>
+  <div class="item header-name-root">
+    <div class="header-name-group">Groups</div>
+    <div class="header-name-period">Periods</div>
+  </div>
   <div class="group-header-row">
     <div (mouseover)="mouseOverGroup(group)" (mouseout)="mouseLeaveGroup(group)" class="item" [ngClass]="{'header-even': (i%2 === 0), 'header-odd': (i%2 !== 0)}" *ngFor="let group of table.groups; index as i">
       <h4 class="group-name">{{group.name}}</h4>
@@ -39,16 +42,32 @@
   </div>
   <div class="legend">
     <div class="legend-metals">
-      <h4 class="legend-header" style="grid-row: 1 / 2">Metals</h4>
-      <span class="legend-item" style="grid-row: 2 / 3; grid-column: 1 /2">Alkali metal</span>
-      <span class="legend-item" style="grid-row: 2 / 3; grid-column: 2 / 3">Alkaline Earth Metal</span>
-      <span class="legend-item" style="grid-row: 2 / 3; grid-column: 3 / 4">Lanthanides</span>
-      <span class="legend-item" style="grid-row: 2 / 3; grid-column: 4 / 5">Actinides</span>
-      <span class="legend-item" style="grid-row: 2 / 3; grid-column: 5 / 6">Transition</span>
-      <span class="legend-item" style="grid-row: 2 / 3; grid-column: 6 / 7">Post-Transition</span>
+      <h4 class="legend-header" style="grid-row: 1 / 2; grid-column: 1 / 7">Metals</h4>
+      <span class="legend-item alkali" style="grid-row: 2 / 3; grid-column: 1 /2">Alkali metal</span>
+      <span class="legend-item alkaline" style="grid-row: 2 / 3; grid-column: 2 / 3">Alkaline Earth Metal</span>
+      <span class="legend-item lanthanide" style="grid-row: 2 / 3; grid-column: 3 / 4">Lanthanides</span>
+      <span class="legend-item actinide" style="grid-row: 2 / 3; grid-column: 4 / 5">Actinides</span>
+      <span class="legend-item transition" style="grid-row: 2 / 3; grid-column: 5 / 6">Transition</span>
+      <span class="legend-item post-transition" style="grid-row: 2 / 3; grid-column: 6 / 7">Post-Transition</span>
     </div>
-    <div class="legend-metalloid"></div>
-    <div class="legend-nonmetals"></div>
-    <div class="legend-unknown"></div>
+    <div class="legend-metalloid">
+      <h4 class="legend-header" style="margin-top: 10px">Metalloid</h4>
+    </div>
+    <div class="legend-nonmetals">
+      <h4 class="legend-header" style="grid-row: 1 / 2; grid-column: 1 / 3">Non metals</h4>
+      <span class="legend-item nonmetal" style="grid-row: 2 / 3; grid-column: 1 / 2">Reactive nonmetals</span>
+      <span class="legend-item noble" style="grid-row: 2 / 3; grid-column: 2 / 3">Noble gas</span>
+    </div>
+    <div class="legend-unknown">
+      <h4 class="legend-header" style="margin-top: 10px">Unknown properties</h4>
+    </div>
+
+    <div class="legend-state">
+      <div class="legend-header" style="grid-column: 1 / 2;">Color of symbol shows state of matter (at 0 °C and 1 atm)</div>
+      <div class="legend-state-item Solid" style="grid-column: 2 / 3">Solid</div>
+      <div class="legend-state-item Liquid" style="grid-column: 3 / 4">Liquid</div>
+      <div class="legend-state-item Gas" style="grid-column: 4 / 5">Gas</div>
+      <div class="legend-state-item Unknown" style="grid-column: 5 / 6">Unknown</div>
+    </div>
   </div>
 </div>
