@@ -23,12 +23,14 @@
 
     <div class="item off-elements-placeholder" style="grid-column: 3 / 4; grid-row: 6 / 7;">*</div>
     <div class="item off-elements-placeholder" style="grid-column: 3 / 4; grid-row: 7 / 8;">**</div>
+    <div class="active-element-root">
     <div class="active-element {{activeElement.category}}" *ngIf="activeElement">
       <span class="active-element-name">{{activeElement.name}}</span>
       <span class="active-element-atomic-number">{{activeElement.number}}</span>
       <strong class="active-element-symbol {{activeElement.phase}}">{{activeElement.symbol}}</strong>
       <span class="active-element-atomic-weight">{{activeElement.atomic_mass}}</span>
     </div>
+  </div>
   </div>
   <div class="off-elements-table">
     <div (mouseover)="mouseOver(element)" (mouseout)="mouseLeave(element)" class="item {{element.category}} {{element.group_selected_style}}" [ngStyle]="element.style" *ngFor="let element of table.offelements; index as i">

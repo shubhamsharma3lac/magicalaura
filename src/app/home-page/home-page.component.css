@@ -169,13 +169,23 @@
     transform: scale(1.5);
 }
 
-.active-element{
-    grid-column: 3 / 5;
+.active-element-root{
+    grid-column: 3 / 13;
     grid-row: 2 / 4;
     text-align: center;
     overflow: hidden;
     text-overflow: ellipsis;
     cursor: pointer;
+    background: white;
+    display: grid;
+    grid-template-columns: 134px auto;
+}
+
+.active-element{
+    grid-column: 1 / 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
 }
 
 .active-element-symbol{
