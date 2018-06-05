@@ -6,6 +6,7 @@ import { HttpClientModule} from '@angular/common/http'
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { PeriodicTableService } from './periodic-table.service';
+import { ElectronicConfigurationPipe } from './electronic-configuration.pipe';
 
 const appRoutes : Routes =
 [
@@ -22,7 +23,8 @@ const appRoutes : Routes =
 @NgModule({
   declarations: [
     AppComponent,
-    HomePageComponent
+    HomePageComponent,
+    ElectronicConfigurationPipe
   ],
   imports: [
     BrowserModule,

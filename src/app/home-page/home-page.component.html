@@ -35,23 +35,80 @@
       </div>
       <div class="active-element-data">
         <div class="active-element-data-header" style="grid-row: 1/2">
-          <span class="active-element-data-header-name">Configuration</span> 
-          <span class="active-element-data-header-value">{{activeElement.density}}</span>
+          <span class="active-element-data-header-name">Configuration</span>
+          <span class="active-element-data-header-value">
+            <span>1s</span>
+            <sup>{{activeElement.shells[0]}}</sup>
+            <span *ngIf="(activeElement.shells[1] | electronicConfiguration : 2 : 's') > 0">2s
+              <sup>{{activeElement.shells[1] | electronicConfiguration : 2 : 's'}}</sup>
+            </span>
+            <span *ngIf="(activeElement.shells[1] | electronicConfiguration : 2 : 'p') > 0">2p
+              <sup>{{activeElement.shells[1] | electronicConfiguration : 2 : 'p'}}</sup>
+            </span>
+            <span *ngIf="(activeElement.shells[2] | electronicConfiguration: 3 : 's') > 0">3s
+              <sup>{{activeElement.shells[2] | electronicConfiguration: 3 : 's'}}</sup>
+            </span>
+            <span *ngIf="(activeElement.shells[2] | electronicConfiguration: 3 : 'p') > 0">3p
+              <sup>{{activeElement.shells[2] | electronicConfiguration: 3 : 'p'}}</sup>
+            </span>
+            <span *ngIf="(activeElement.shells[3] | electronicConfiguration: 4 : 's') > 0">4s
+              <sup>{{activeElement.shells[3] | electronicConfiguration: 4 : 's'}}</sup>
+            </span>
+            <span *ngIf="(activeElement.shells[2] | electronicConfiguration: 3 : 'd') > 0">3d
+              <sup>{{activeElement.shells[2] | electronicConfiguration: 3 : 'd'}}</sup>
+            </span>
+            <span *ngIf="(activeElement.shells[3] | electronicConfiguration: 4 : 'p') > 0">4p
+              <sup>{{activeElement.shells[3] | electronicConfiguration: 4 : 'p'}}</sup>
+            </span>
+            <span *ngIf="(activeElement.shells[4] | electronicConfiguration: 5 : 's') > 0">5s
+              <sup>{{activeElement.shells[4] | electronicConfiguration: 5 : 's'}}</sup>
+            </span>
+            <span *ngIf="(activeElement.shells[3] | electronicConfiguration: 4 : 'd') > 0">4d
+              <sup>{{activeElement.shells[3] | electronicConfiguration: 4 : 'd'}}</sup>
+            </span>
+            <span *ngIf="(activeElement.shells[4] | electronicConfiguration: 5 : 'p') > 0">5p
+              <sup>{{activeElement.shells[4] | electronicConfiguration: 5 : 'p'}}</sup>
+            </span>
+            <span *ngIf="(activeElement.shells[5] | electronicConfiguration: 6 : 's') > 0">6s
+              <sup>{{activeElement.shells[5] | electronicConfiguration: 6 : 's'}}</sup>
+            </span>
+            <span *ngIf="(activeElement.shells[4] | electronicConfiguration: 5 : 'd') > 0">5d
+              <sup>{{activeElement.shells[4] | electronicConfiguration: 5 : 'd'}}</sup>
+            </span>
+            <span *ngIf="(activeElement.shells[3] | electronicConfiguration: 4 : 'f') > 0">4f
+              <sup>{{activeElement.shells[3] | electronicConfiguration: 4 : 'f'}}</sup>
+            </span>
+            <span *ngIf="(activeElement.shells[5] | electronicConfiguration: 6 : 'p') > 0">6p
+              <sup>{{activeElement.shells[5] | electronicConfiguration: 6 : 'p'}}</sup>
+            </span>
+            <span *ngIf="(activeElement.shells[6] | electronicConfiguration: 7 : 's') > 0">7s
+              <sup>{{activeElement.shells[6] | electronicConfiguration: 7 : 's'}}</sup>
+            </span>
+            <span *ngIf="(activeElement.shells[5] | electronicConfiguration: 6 : 'd') > 0">6d
+              <sup>{{activeElement.shells[5] | electronicConfiguration: 6 : 'd'}}</sup>
+            </span>
+            <span *ngIf="(activeElement.shells[4] | electronicConfiguration: 5 : 'f') > 0">5f
+              <sup>{{activeElement.shells[4] | electronicConfiguration: 5 : 'f'}}</sup>
+            </span>
+            <span *ngIf="(activeElement.shells[6] | electronicConfiguration: 7 : 'p') > 0">7p
+              <sup>{{activeElement.shells[6] | electronicConfiguration: 7 : 'p'}}</sup>
+            </span>
+          </span>
         </div>
         <div class="active-element-data-header" style="grid-row: 2/3">
-          <span class="active-element-data-header-name">Isotopes</span> 
+          <span class="active-element-data-header-name">Isotopes</span>
           <span class="active-element-data-header-value">{{activeElement.density}}</span>
         </div>
         <div class="active-element-data-header" style="grid-row: 3/4">
-          <span class="active-element-data-header-name">Density</span> 
+          <span class="active-element-data-header-name">Density</span>
           <span class="active-element-data-header-value">{{activeElement.density}} g/L</span>
         </div>
         <div class="active-element-data-header" style="grid-row: 4/5">
-          <span class="active-element-data-header-name">Melting Point</span> 
+          <span class="active-element-data-header-name">Melting Point</span>
           <span class="active-element-data-header-value">{{activeElement.melt}}</span>
           K</div>
         <div class="active-element-data-header" style="grid-row: 5/6">
-          <span class="active-element-data-header-name">Boiling Point</span> 
+          <span class="active-element-data-header-name">Boiling Point</span>
           <span class="active-element-data-header-value">{{activeElement.boil}}</span>
           K</div>
       </div>
