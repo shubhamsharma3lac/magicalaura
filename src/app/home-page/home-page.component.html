@@ -4,17 +4,20 @@
     <div class="header-name-period">Periods</div>
   </div>
   <div class="group-header-row">
-    <div (mouseover)="mouseOverGroup(group)" (mouseout)="mouseLeaveGroup(group)" class="item" [ngClass]="{'header-even': (i%2 === 0), 'header-odd': (i%2 !== 0)}" *ngFor="let group of table.groups; index as i">
+    <div (mouseover)="mouseOverGroup(group)" (mouseout)="mouseLeaveGroup(group)" class="item" [ngClass]="{'header-even': (i%2 === 0), 'header-odd': (i%2 !== 0)}"
+      *ngFor="let group of table.groups; index as i">
       <h4 class="group-name">{{group.name}}</h4>
     </div>
   </div>
   <div class="period-header-column">
-    <div (mouseover)="mouseOverPeriod(period)" (mouseout)="mouseLeavePeriod(period)" class="item" [ngClass]="{'header-even': (i%2 === 0), 'header-odd': (i%2 !== 0)}" *ngFor="let period of table.periods; index as i">
+    <div (mouseover)="mouseOverPeriod(period)" (mouseout)="mouseLeavePeriod(period)" class="item" [ngClass]="{'header-even': (i%2 === 0), 'header-odd': (i%2 !== 0)}"
+      *ngFor="let period of table.periods; index as i">
       <h4 class="group-name">{{period.name}}</h4>
     </div>
   </div>
   <div class="elements-table" *ngIf="table.elements.length > 0">
-    <div (mouseover)="mouseOver(element)" (mouseout)="mouseLeave(element)" class="item {{element.category}} {{element.group_selected_style}}" [ngStyle]="element.style" *ngFor="let element of table.elements; index as i">
+    <div (mouseover)="mouseOver(element)" (mouseout)="mouseLeave(element)" class="item {{element.category}} {{element.group_selected_style}}"
+      [ngStyle]="element.style" *ngFor="let element of table.elements; index as i">
       <span class="element-name">{{element.name}}</span>
       <span class="element-atomic-number">{{element.number}}</span>
       <strong class="element-symbol {{element.phase}}">{{element.symbol}}</strong>
@@ -24,16 +27,39 @@
     <div class="item off-elements-placeholder" style="grid-column: 3 / 4; grid-row: 6 / 7;">*</div>
     <div class="item off-elements-placeholder" style="grid-column: 3 / 4; grid-row: 7 / 8;">**</div>
     <div class="active-element-root">
-    <div class="active-element {{activeElement.category}}" *ngIf="activeElement">
-      <span class="active-element-name">{{activeElement.name}}</span>
-      <span class="active-element-atomic-number">{{activeElement.number}}</span>
-      <strong class="active-element-symbol {{activeElement.phase}}">{{activeElement.symbol}}</strong>
-      <span class="active-element-atomic-weight">{{activeElement.atomic_mass}}</span>
+      <div class="active-element {{activeElement.category}}" *ngIf="activeElement">
+        <span class="active-element-name">{{activeElement.name}}</span>
+        <span class="active-element-atomic-number">{{activeElement.number}}</span>
+        <strong class="active-element-symbol {{activeElement.phase}}">{{activeElement.symbol}}</strong>
+        <span class="active-element-atomic-weight">{{activeElement.atomic_mass}}</span>
+      </div>
+      <div class="active-element-data">
+        <div class="active-element-data-header" style="grid-row: 1/2">
+          <span class="active-element-data-header-name">Configuration</span> 
+          <span class="active-element-data-header-value">{{activeElement.density}}</span>
+        </div>
+        <div class="active-element-data-header" style="grid-row: 2/3">
+          <span class="active-element-data-header-name">Isotopes</span> 
+          <span class="active-element-data-header-value">{{activeElement.density}}</span>
+        </div>
+        <div class="active-element-data-header" style="grid-row: 3/4">
+          <span class="active-element-data-header-name">Density</span> 
+          <span class="active-element-data-header-value">{{activeElement.density}} g/L</span>
+        </div>
+        <div class="active-element-data-header" style="grid-row: 4/5">
+          <span class="active-element-data-header-name">Melting Point</span> 
+          <span class="active-element-data-header-value">{{activeElement.melt}}</span>
+          K</div>
+        <div class="active-element-data-header" style="grid-row: 5/6">
+          <span class="active-element-data-header-name">Boiling Point</span> 
+          <span class="active-element-data-header-value">{{activeElement.boil}}</span>
+          K</div>
+      </div>
     </div>
   </div>
-  </div>
   <div class="off-elements-table">
-    <div (mouseover)="mouseOver(element)" (mouseout)="mouseLeave(element)" class="item {{element.category}} {{element.group_selected_style}}" [ngStyle]="element.style" *ngFor="let element of table.offelements; index as i">
+    <div (mouseover)="mouseOver(element)" (mouseout)="mouseLeave(element)" class="item {{element.category}} {{element.group_selected_style}}"
+      [ngStyle]="element.style" *ngFor="let element of table.offelements; index as i">
       <span class="element-name">{{element.name}}</span>
       <span class="element-atomic-number">{{element.number}}</span>
       <strong class="element-symbol {{element.phase}}">{{element.symbol}}</strong>

@@ -188,6 +188,36 @@
 
 }
 
+.active-element-data{
+    grid-column: 2 / 3;
+    background: wheat;
+    display: grid;
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-columns: auto auto;
+    text-align: center;
+}
+
+.active-element-data-header{
+    font-size: small;
+    text-align: left;
+    padding: 0px 6px;
+}
+
+.active-element-data-header-name{
+    font-size: small;
+    text-align: left;
+    padding: 0px 6px;
+    width: 100px;
+    display: inline-block;
+}
+
+.active-element-data-header-value{
+    font-size: small;
+    text-align: left;
+    font-weight: 600;
+    display: inline-block;
+}
+
 .active-element-symbol{
     margin: 0px;
     display: block;
