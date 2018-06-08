@@ -34,9 +34,8 @@
         <span class="active-element-atomic-weight">{{activeElement.atomic_mass}}</span>
       </div>
       <div class="active-element-data">
-        <div class="active-element-data-header" style="grid-row: 1/2">
-          <span class="active-element-data-header-name">Configuration</span>
-          <span class="active-element-data-header-value">
+        <span class="active-element-data-header-name" style="grid-row: 1/2; grid-column: 1/2">Configuration</span>
+        <!-- <span class="active-element-data-header-value">
             <span>1s</span>
             <sup>{{activeElement.shells[0]}}</sup>
             <span *ngIf="(activeElement.shells[1] | electronicConfiguration : 2 : 's') > 0">2s
@@ -93,24 +92,24 @@
             <span *ngIf="(activeElement.shells[6] | electronicConfiguration: 7 : 'p') > 0">7p
               <sup>{{activeElement.shells[6] | electronicConfiguration: 7 : 'p'}}</sup>
             </span>
-          </span>
-        </div>
-        <div class="active-element-data-header" style="grid-row: 2/3">
-          <span class="active-element-data-header-name">Isotopes</span>
-          <span class="active-element-data-header-value">{{activeElement.density}}</span>
-        </div>
-        <div class="active-element-data-header" style="grid-row: 3/4">
-          <span class="active-element-data-header-name">Density</span>
-          <span class="active-element-data-header-value">{{activeElement.density}} g/L</span>
-        </div>
-        <div class="active-element-data-header" style="grid-row: 4/5">
-          <span class="active-element-data-header-name">Melting Point</span>
-          <span class="active-element-data-header-value">{{activeElement.melt}}</span>
-          K</div>
-        <div class="active-element-data-header" style="grid-row: 5/6">
-          <span class="active-element-data-header-name">Boiling Point</span>
-          <span class="active-element-data-header-value">{{activeElement.boil}}</span>
-          K</div>
+          </span> -->
+        <span class="active-element-data-header-value" style="grid-row: 1/2; grid-column: 2/3">{{activeElement.electronicConfiguration}}</span>
+        <span class="active-element-data-header-name" style="grid-row: 2/3; grid-column: 1/2">Isotopes</span>
+        <span class="active-element-data-header-value" style="grid-row: 2/3; grid-column: 2/3">{{activeElement.density}}</span>
+        <span class="active-element-data-header-name" style="grid-row: 3/4; grid-column: 1/2">Density</span>
+        <span class="active-element-data-header-value" style="grid-row: 3/4; grid-column: 2/3">{{activeElement.density}}  g cm <sup>-3</sup></span>
+        <span class="active-element-data-header-name" style="grid-row: 4/5; grid-column: 1/2">Melting Point</span>
+        <span class="active-element-data-header-value" style="grid-row: 4/5; grid-column: 2/3">{{activeElement.meltingPoint}}K</span>
+        <span class="active-element-data-header-name" style="grid-row: 5/6; grid-column: 1/2">Boiling Point</span>
+        <span class="active-element-data-header-value" style="grid-row: 5/6; grid-column: 2/3">{{activeElement.boilingPoint}}</span>
+        <span class="active-element-data-header-name" style="grid-row: 1/2; grid-column: 3/4">1st Ionization Energy</span>
+        <span class="active-element-data-header-value" style="grid-row: 1/2; grid-column: 4/5">{{activeElement.ionizationEnergy}} KJ mol<sup>-1</sup></span>
+        <span class="active-element-data-header-name" style="grid-row: 2/3; grid-column: 3/4">Electronegativity(P.S)</span>
+        <span class="active-element-data-header-value" style="grid-row: 2/3; grid-column: 4/5">{{activeElement.electronegativity}}</span>
+        <span class="active-element-data-header-name" style="grid-row: 3/4; grid-column: 3/4">Electron affinity</span>
+        <span class="active-element-data-header-value" style="grid-row: 3/4; grid-column: 4/5">{{activeElement.electronAffinity}}</span>
+        <span class="active-element-data-header-name" style="grid-row: 4/5; grid-column: 3/4">Discovered</span>
+        <span class="active-element-data-header-value" style="grid-row: 4/5; grid-column: 4/5">{{activeElement.yearDiscovered}}</span>
       </div>
     </div>
   </div>

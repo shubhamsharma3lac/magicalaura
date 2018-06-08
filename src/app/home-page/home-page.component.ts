@@ -1,7 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { PeriodicTable, Group, Period } from '../periodic-table';
+import { PeriodicTable, Group, Period, PeriodicTableElement } from '../periodic-table';
 import { PeriodicTableService } from '../periodic-table.service';
 import { HttpClient } from '@angular/common/http'
+import { ElementData } from '@angular/core/src/view';
+import {  PeriodicTableElementsData } from '../../assets/data-update';
 
 @Component({
   selector: 'app-home-page',
@@ -12,10 +14,12 @@ import { HttpClient } from '@angular/common/http'
 export class HomePageComponent implements OnInit, OnDestroy {
 
   public table: PeriodicTable;
-  public activeElement: Element;
+  public activeElement: PeriodicTableElement;
+  public periodicTableData: PeriodicTableElementsData;
 
   constructor(public http: HttpClient) {
     this.table = new PeriodicTable(http);
+    this.periodicTableData = new PeriodicTableElementsData();
   }
 
   ngOnInit() {
@@ -82,11 +86,19 @@ export class HomePageComponent implements OnInit, OnDestroy {
     })
   }
 
-  mouseOver(element: Element){
-    this.activeElement = element;
+  mouseOver(element: PeriodicTableElement){
+    this.activeElement = new PeriodicTableElement();
+
+    Object.keys(element).forEach((key) => {
+      this.activeElement[key] = element[key];
+    })
+
+    Object.keys( this.periodicTableData.elements[element.number - 1]).forEach((key) => {
+      this.activeElement[key] = this.periodicTableData.elements[element.number - 1][key];
+    })
   }
 
-  mouseLeave(element: Element){
+  mouseLeave(element: PeriodicTableElement){
     this.activeElement = null;
   }
 

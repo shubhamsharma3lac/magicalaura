@@ -8,16 +8,16 @@ export class PeriodicTable {
     public groups: Group[];
     public periods: Period[];
 
-    public elements: Element[];
-    public offelements: Element[];
+    public elements: PeriodicTableElement[];
+    public offelements: PeriodicTableElement[];
 
 
     constructor(private http: HttpClient) {
         this.groups = new Array<Group>();
         this.periods = new Array<Period>();
 
-        this.elements = new Array<Element>();
-        this.offelements = new Array<Element>();
+        this.elements = new Array<PeriodicTableElement>();
+        this.offelements = new Array<PeriodicTableElement>();
         this.initialize();
     }
 
@@ -60,7 +60,7 @@ export class PeriodicTable {
     }
 }
 
-export class Element {
+export class PeriodicTableElement {
     public style?: Object;
     public group_selected_style?: Object;
 
@@ -85,6 +85,23 @@ export class Element {
     public xpos: number;
     public ypos: number;
     public shells: number[];
+    public atomicNumber: number;
+    public atomicMass: string;
+    public cpkHexColor: string;
+    public electronicConfiguration: string;
+    public electronegativity: number;
+    public atomicRadius: number;
+    public ionRadius: string;
+    public vanDelWaalsRadius: number;
+    public ionizationEnergy: number;
+    public electronAffinity: number;
+    public oxidationStates: string;
+    public standardState: string;
+    public bondingType: string;
+    public meltingPoint: number;
+    public boilingPoint: number;
+    public groupBlock: string;
+    public yearDiscovered: number;
 }
 
 export class Group {

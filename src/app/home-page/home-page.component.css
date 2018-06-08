@@ -193,29 +193,24 @@
     background: wheat;
     display: grid;
     grid-template-rows: auto auto auto auto auto;
-    grid-template-columns: auto auto;
+    grid-template-columns: 20% 35% 25% 20%;
     text-align: center;
 }
 
-.active-element-data-header{
-    font-size: small;
-    text-align: left;
-    padding: 0px 6px;
-}
 
 .active-element-data-header-name{
     font-size: small;
     text-align: left;
     padding: 0px 6px;
-    width: 100px;
     display: inline-block;
 }
 
 .active-element-data-header-value{
     font-size: small;
-    text-align: left;
+    text-align: right;
     font-weight: 600;
     display: inline-block;
+    padding: 0px 6px;
 }
 
 .active-element-symbol{
