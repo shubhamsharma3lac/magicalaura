@@ -20,6 +20,7 @@ export class HomePageComponent implements OnInit, OnDestroy {
   constructor(public http: HttpClient) {
     this.table = new PeriodicTable(http);
     this.periodicTableData = new PeriodicTableElementsData();
+    this.activeElement = new PeriodicTableElement();
   }
 
   ngOnInit() {
@@ -33,62 +34,63 @@ export class HomePageComponent implements OnInit, OnDestroy {
   mouseOverGroup(group : Group){
     this.table.elements.forEach((element) => {
       if(element.xpos.toString() === group.name){
-        element.group_selected_style = 'group-selected';
+        element.common_style_selected = 'opacity-dark';
+      }
+      else{
+        element.common_style_unselected = 'opacity-faint';
       }
     })
 
     this.table.offelements.forEach((element) => {
-      if(element.xpos === (Number.parseInt(group.name) - 1)){
-        element.group_selected_style = 'group-selected';
-      }
+        element.common_style_unselected = 'opacity-faint';
     })
   }
 
   mouseLeaveGroup(group : Group){
     this.table.elements.forEach((element) => {
-      if(element.xpos.toString() === group.name){
-        element.group_selected_style = null;
-      }
+        element.common_style_selected = null;
+        element.common_style_unselected = null;
     })
 
     this.table.offelements.forEach((element) => {
-      if(element.xpos === (Number.parseInt(group.name) - 1)){
-        element.group_selected_style = null;
-      }
+        element.common_style_selected = null;
+        element.common_style_unselected = null;
     })
   }
 
   mouseOverPeriod(period : Period){
     this.table.elements.forEach((element) => {
       if(element.period.toString() === period.name){
-        element.group_selected_style = 'group-selected';
+        element.common_style_selected = 'opacity-dark';
+      }
+      else{
+        element.common_style_unselected = 'opacity-faint';        
       }
     })
 
     this.table.offelements.forEach((element) => {
       if(element.period === (Number.parseInt(period.name))){
-        element.group_selected_style = 'group-selected';
-      }
+        element.common_style_selected = 'opacity-dark';
+        }
+        else{
+          element.common_style_unselected = 'opacity-faint';  
+        }
     })
   }
 
   mouseLeavePeriod(period : Period){
     this.table.elements.forEach((element) => {
-      if(element.period.toString() === period.name){
-        element.group_selected_style = null;
-      }
+        element.common_style_selected = null;
+        element.common_style_unselected = null; 
     })
 
     this.table.offelements.forEach((element) => {
-      if(element.period === (Number.parseInt(period.name))){
-        element.group_selected_style = null;
-      }
+        element.common_style_selected = null;
+        element.common_style_unselected = null;
     })
   }
 
   mouseOver(element: PeriodicTableElement){
-    this.activeElement = new PeriodicTableElement();
-
     Object.keys(element).forEach((key) => {
       this.activeElement[key] = element[key];
     })
@@ -99,7 +101,41 @@ export class HomePageComponent implements OnInit, OnDestroy {
   }
 
   mouseLeave(element: PeriodicTableElement){
-    this.activeElement = null;
+    this.activeElement = new PeriodicTableElement();
+  }
+
+  legendHover(category: string){
+    this.table.elements.forEach(element => {
+      if(element.category.toLowerCase().includes(category)){
+        element.common_style_selected = 'opacity-dark';
+      }
+      else{
+        element.common_style_unselected = 'opacity-faint';
+      }
+    });
+
+    this.table.offelements.forEach(element => {
+      if(element.category.toLowerCase().includes(category)){
+        element.common_style_selected = 'opacity-dark';
+      }
+      else{
+        element.common_style_unselected = 'opacity-faint';
+      }
+    });
+  }
+
+  legendHoverOut(){
+    this.table.elements.forEach(element => {
+        element.common_style_selected = null;
+        element.common_style_unselected = null;
+
+    });
+
+    this.table.offelements.forEach(element => {
+      element.common_style_selected = null;
+      element.common_style_unselected = null;
+
+  });
   }
 
 }

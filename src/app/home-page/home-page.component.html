@@ -15,8 +15,9 @@
       <h4 class="group-name">{{period.name}}</h4>
     </div>
   </div>
+  
   <div class="elements-table" *ngIf="table.elements.length > 0">
-    <div (mouseover)="mouseOver(element)" (mouseout)="mouseLeave(element)" class="item {{element.category}} {{element.group_selected_style}}"
+    <div (mouseover)="mouseOver(element)" (mouseout)="mouseLeave(element)" class="item {{element.category}} {{element.common_style_selected}} {{element.common_style_unselected}}"
       [ngStyle]="element.style" *ngFor="let element of table.elements; index as i">
       <span class="element-name">{{element.name}}</span>
       <span class="element-atomic-number">{{element.number}}</span>
@@ -26,8 +27,9 @@
 
     <div class="item off-elements-placeholder" style="grid-column: 3 / 4; grid-row: 6 / 7;">*</div>
     <div class="item off-elements-placeholder" style="grid-column: 3 / 4; grid-row: 7 / 8;">**</div>
+    
     <div class="active-element-root">
-      <div class="active-element {{activeElement.category}}" *ngIf="activeElement">
+      <div class="active-element {{activeElement.category}}">
         <span class="active-element-name">{{activeElement.name}}</span>
         <span class="active-element-atomic-number">{{activeElement.number}}</span>
         <strong class="active-element-symbol {{activeElement.phase}}">{{activeElement.symbol}}</strong>
@@ -97,13 +99,13 @@
         <span class="active-element-data-header-name" style="grid-row: 2/3; grid-column: 1/2">Isotopes</span>
         <span class="active-element-data-header-value" style="grid-row: 2/3; grid-column: 2/3">{{activeElement.density}}</span>
         <span class="active-element-data-header-name" style="grid-row: 3/4; grid-column: 1/2">Density</span>
-        <span class="active-element-data-header-value" style="grid-row: 3/4; grid-column: 2/3">{{activeElement.density}}  g cm <sup>-3</sup></span>
+        <span class="active-element-data-header-value" style="grid-row: 3/4; grid-column: 2/3">{{activeElement.density}} <span *ngIf="activeElement.density !== 'Unknown'">g cm <sup>-3</sup></span></span>
         <span class="active-element-data-header-name" style="grid-row: 4/5; grid-column: 1/2">Melting Point</span>
-        <span class="active-element-data-header-value" style="grid-row: 4/5; grid-column: 2/3">{{activeElement.meltingPoint}}K</span>
+        <span class="active-element-data-header-value" style="grid-row: 4/5; grid-column: 2/3">{{activeElement.meltingPoint}}<span *ngIf="activeElement.meltingPoint !== 'Unknown'"> K</span></span>
         <span class="active-element-data-header-name" style="grid-row: 5/6; grid-column: 1/2">Boiling Point</span>
-        <span class="active-element-data-header-value" style="grid-row: 5/6; grid-column: 2/3">{{activeElement.boilingPoint}}</span>
+        <span class="active-element-data-header-value" style="grid-row: 5/6; grid-column: 2/3">{{activeElement.boilingPoint}}<span *ngIf="activeElement.boilingPoint !== 'Unknown'"> K</span></span>
         <span class="active-element-data-header-name" style="grid-row: 1/2; grid-column: 3/4">1st Ionization Energy</span>
-        <span class="active-element-data-header-value" style="grid-row: 1/2; grid-column: 4/5">{{activeElement.ionizationEnergy}} KJ mol<sup>-1</sup></span>
+        <span class="active-element-data-header-value" style="grid-row: 1/2; grid-column: 4/5">{{activeElement.ionizationEnergy}}<span *ngIf="activeElement.ionizationEnergy !== 'Unknown'"> KJ mol<sup>-1</sup></span></span>
         <span class="active-element-data-header-name" style="grid-row: 2/3; grid-column: 3/4">Electronegativity(P.S)</span>
         <span class="active-element-data-header-value" style="grid-row: 2/3; grid-column: 4/5">{{activeElement.electronegativity}}</span>
         <span class="active-element-data-header-name" style="grid-row: 3/4; grid-column: 3/4">Electron affinity</span>
@@ -113,8 +115,9 @@
       </div>
     </div>
   </div>
+
   <div class="off-elements-table">
-    <div (mouseover)="mouseOver(element)" (mouseout)="mouseLeave(element)" class="item {{element.category}} {{element.group_selected_style}}"
+    <div (mouseover)="mouseOver(element)" (mouseout)="mouseLeave(element)" class="item {{element.category}} {{element.common_style_selected}} {{element.common_style_unselected}}"
       [ngStyle]="element.style" *ngFor="let element of table.offelements; index as i">
       <span class="element-name">{{element.name}}</span>
       <span class="element-atomic-number">{{element.number}}</span>
@@ -124,23 +127,24 @@
     <div class="item off-elements-placeholder" style="grid-column: 3 / 4; grid-row: 1 / 2; text-align: center; line-height: 64px;">*</div>
     <div class="item off-elements-placeholder" style="grid-column: 3 / 4; grid-row: 2 / 3; text-align: center; line-height: 64px">**</div>
   </div>
+
   <div class="legend">
     <div class="legend-metals">
       <h4 class="legend-header" style="grid-row: 1 / 2; grid-column: 1 / 7">Metals</h4>
-      <span class="legend-item alkali" style="grid-row: 2 / 3; grid-column: 1 /2">Alkali metal</span>
-      <span class="legend-item alkaline" style="grid-row: 2 / 3; grid-column: 2 / 3">Alkaline Earth Metal</span>
-      <span class="legend-item lanthanide" style="grid-row: 2 / 3; grid-column: 3 / 4">Lanthanides</span>
-      <span class="legend-item actinide" style="grid-row: 2 / 3; grid-column: 4 / 5">Actinides</span>
-      <span class="legend-item transition" style="grid-row: 2 / 3; grid-column: 5 / 6">Transition</span>
-      <span class="legend-item post-transition" style="grid-row: 2 / 3; grid-column: 6 / 7">Post-Transition</span>
+      <span (mouseover)="legendHover('alkali metal')" (mouseout)="legendHoverOut()" class="legend-item alkali" style="grid-row: 2 / 3; grid-column: 1 /2">Alkali metal</span>
+      <span (mouseover)="legendHover('alkaline')" (mouseout)="legendHoverOut()" class="legend-item alkaline" style="grid-row: 2 / 3; grid-column: 2 / 3">Alkaline Earth Metal</span>
+      <span (mouseover)="legendHover('lanthanide')" (mouseout)="legendHoverOut()" class="legend-item lanthanide" style="grid-row: 2 / 3; grid-column: 3 / 4">Lanthanides</span>
+      <span (mouseover)="legendHover('actinide')" (mouseout)="legendHoverOut()" class="legend-item actinide" style="grid-row: 2 / 3; grid-column: 4 / 5">Actinides</span>
+      <span (mouseover)="legendHover('transition metal')" (mouseout)="legendHoverOut()" class="legend-item transition" style="grid-row: 2 / 3; grid-column: 5 / 6">Transition</span>
+      <span (mouseover)="legendHover('post-transition')" (mouseout)="legendHoverOut()" class="legend-item post-transition" style="grid-row: 2 / 3; grid-column: 6 / 7">Post-Transition</span>
     </div>
     <div class="legend-metalloid">
-      <h4 class="legend-header" style="margin-top: 10px">Metalloid</h4>
+      <h4 (mouseover)="legendHover('metalloid')" (mouseout)="legendHoverOut()" class="legend-header" style="margin-top: 10px">Metalloid</h4>
     </div>
     <div class="legend-nonmetals">
-      <h4 class="legend-header" style="grid-row: 1 / 2; grid-column: 1 / 3">Non metals</h4>
-      <span class="legend-item nonmetal" style="grid-row: 2 / 3; grid-column: 1 / 2">Reactive nonmetals</span>
-      <span class="legend-item noble" style="grid-row: 2 / 3; grid-column: 2 / 3">Noble gas</span>
+      <h4 (mouseover)="legendHover('nonmetal')" (mouseout)="legendHoverOut()" class="legend-header" style="grid-row: 1 / 2; grid-column: 1 / 3">Non metals</h4>
+      <span (mouseover)="legendHover('other nonmetal')" (mouseout)="legendHoverOut()" class="legend-item nonmetal" style="grid-row: 2 / 3; grid-column: 1 / 2">Reactive nonmetals</span>
+      <span (mouseover)="legendHover('noble gas')" (mouseout)="legendHoverOut()" class="legend-item noble" style="grid-row: 2 / 3; grid-column: 2 / 3">Noble gas</span>
     </div>
     <div class="legend-unknown">
       <h4 class="legend-header" style="margin-top: 10px">Unknown properties</h4>

@@ -62,7 +62,9 @@ export class PeriodicTable {
 
 export class PeriodicTableElement {
     public style?: Object;
-    public group_selected_style?: Object;
+    public common_style_selected?: Object;
+    public common_style_unselected?: Object;
+
 
     public name: string;
     public appearance: string;

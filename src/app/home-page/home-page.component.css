@@ -2,8 +2,8 @@
     display: grid;
     grid-template-rows: 64px auto 12px auto auto;
     grid-template-columns: 64px auto;
-    grid-column-gap: 6px;
-    grid-row-gap: 6px;
+    grid-column-gap: 4px;
+    grid-row-gap: 4px;
     padding: 12px;
     align-content: center;
     justify-content: center; 
@@ -16,7 +16,7 @@
     grid-column: 2 / 3;
     grid-row: 1 / 2;
     grid-template-columns: repeat(18, 64px);
-    grid-column-gap: 6px;
+    grid-column-gap: 4px;
     display: grid;
 }
 
@@ -24,7 +24,7 @@
     grid-column: 1 / 2;
     grid-row: 2 / 3;
     grid-template-rows: repeat(7, 64px);
-    grid-row-gap: 6px;
+    grid-row-gap: 4px;
     display: grid;
 }
 
@@ -48,8 +48,8 @@
     display: grid;
     grid-template-columns: repeat(18, 64px);
     grid-template-rows: repeat(7, 64px);
-    grid-column-gap: 6px;
-    grid-row-gap: 6px;
+    grid-column-gap: 4px;
+    grid-row-gap: 4px;
 }
 
 .element-symbol{
@@ -82,8 +82,8 @@
     display: grid;
     grid-template-columns: repeat(18, 64px);
     grid-template-rows: repeat(2, 64px);
-    grid-column-gap: 6px;
-    grid-row-gap: 6px;
+    grid-column-gap: 4px;
+    grid-row-gap: 4px;
 }
 
 .alkali{
@@ -176,7 +176,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     cursor: pointer;
-    background: white;
+    background: transparent;
     display: grid;
     grid-template-columns: 134px auto;
 }
@@ -190,7 +190,6 @@
 
 .active-element-data{
     grid-column: 2 / 3;
-    background: wheat;
     display: grid;
     grid-template-rows: auto auto auto auto auto;
     grid-template-columns: 20% 35% 25% 20%;
@@ -238,8 +237,12 @@
     display: block;
 }
 
-.group-selected{
-    border: 1px solid black;
+.opacity-dark{
+    opacity: 1;
+}
+
+.opacity-faint{
+    opacity: 0.2;
 }
 
 .legend{
