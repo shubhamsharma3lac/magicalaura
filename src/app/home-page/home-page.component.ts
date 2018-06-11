@@ -3,7 +3,7 @@ import { PeriodicTable, Group, Period, PeriodicTableElement } from '../periodic-
 import { PeriodicTableService } from '../periodic-table.service';
 import { HttpClient } from '@angular/common/http'
 import { ElementData } from '@angular/core/src/view';
-import {  PeriodicTableElementsData } from '../../assets/data-update';
+import { PeriodicTableElementsData } from '../../assets/data-update';
 
 @Component({
   selector: 'app-home-page',
@@ -27,107 +27,107 @@ export class HomePageComponent implements OnInit, OnDestroy {
 
   }
 
-  ngOnDestroy(){
+  ngOnDestroy() {
 
   }
 
-  mouseOverGroup(group : Group){
+  mouseOverGroup(group: Group) {
     this.table.elements.forEach((element) => {
-      if(element.xpos.toString() === group.name){
+      if (element.xpos.toString() === group.name) {
         element.common_style_selected = 'opacity-dark';
       }
-      else{
+      else {
         element.common_style_unselected = 'opacity-faint';
       }
     })
 
     this.table.offelements.forEach((element) => {
+      element.common_style_unselected = 'opacity-faint';
+    })
+  }
+
+  mouseLeaveGroup(group: Group) {
+    this.table.elements.forEach((element) => {
+      element.common_style_selected = null;
+      element.common_style_unselected = null;
+    })
+
+    this.table.offelements.forEach((element) => {
+      element.common_style_selected = null;
+      element.common_style_unselected = null;
+    })
+  }
+
+  mouseOverPeriod(period: Period) {
+    this.table.elements.forEach((element) => {
+      if (element.period.toString() === period.name) {
+        element.common_style_selected = 'opacity-dark';
+      }
+      else {
         element.common_style_unselected = 'opacity-faint';
-    })
-  }
-
-  mouseLeaveGroup(group : Group){
-    this.table.elements.forEach((element) => {
-        element.common_style_selected = null;
-        element.common_style_unselected = null;
-    })
-
-    this.table.offelements.forEach((element) => {
-        element.common_style_selected = null;
-        element.common_style_unselected = null;
-    })
-  }
-
-  mouseOverPeriod(period : Period){
-    this.table.elements.forEach((element) => {
-      if(element.period.toString() === period.name){
-        element.common_style_selected = 'opacity-dark';
-      }
-      else{
-        element.common_style_unselected = 'opacity-faint';        
       }
     })
 
     this.table.offelements.forEach((element) => {
-      if(element.period === (Number.parseInt(period.name))){
+      if (element.period === (Number.parseInt(period.name))) {
         element.common_style_selected = 'opacity-dark';
-        }
-        else{
-          element.common_style_unselected = 'opacity-faint';  
-        }
+      }
+      else {
+        element.common_style_unselected = 'opacity-faint';
+      }
     })
   }
 
-  mouseLeavePeriod(period : Period){
+  mouseLeavePeriod(period: Period) {
     this.table.elements.forEach((element) => {
-        element.common_style_selected = null;
-        element.common_style_unselected = null; 
+      element.common_style_selected = null;
+      element.common_style_unselected = null;
     })
 
     this.table.offelements.forEach((element) => {
-        element.common_style_selected = null;
-        element.common_style_unselected = null;
+      element.common_style_selected = null;
+      element.common_style_unselected = null;
     })
   }
 
-  mouseOver(element: PeriodicTableElement){
+  mouseOver(element: PeriodicTableElement) {
     Object.keys(element).forEach((key) => {
       this.activeElement[key] = element[key];
     })
 
-    Object.keys( this.periodicTableData.elements[element.number - 1]).forEach((key) => {
+    Object.keys(this.periodicTableData.elements[element.number - 1]).forEach((key) => {
       this.activeElement[key] = this.periodicTableData.elements[element.number - 1][key];
     })
   }
 
-  mouseLeave(element: PeriodicTableElement){
+  mouseLeave(element: PeriodicTableElement) {
     this.activeElement = new PeriodicTableElement();
   }
 
-  legendHover(category: string){
+  legendHover(category: string) {
     this.table.elements.forEach(element => {
-      if(element.category.toLowerCase().includes(category)){
+      if (element.category.toLowerCase().includes(category)) {
         element.common_style_selected = 'opacity-dark';
       }
-      else{
+      else {
         element.common_style_unselected = 'opacity-faint';
       }
     });
 
     this.table.offelements.forEach(element => {
-      if(element.category.toLowerCase().includes(category)){
+      if (element.category.toLowerCase().includes(category)) {
         element.common_style_selected = 'opacity-dark';
       }
-      else{
+      else {
         element.common_style_unselected = 'opacity-faint';
       }
     });
   }
 
-  legendHoverOut(){
+  legendHoverOut() {
     this.table.elements.forEach(element => {
-        element.common_style_selected = null;
-        element.common_style_unselected = null;
+      element.common_style_selected = null;
+      element.common_style_unselected = null;
 
     });
 
@@ -135,7 +135,7 @@ export class HomePageComponent implements OnInit, OnDestroy {
       element.common_style_selected = null;
       element.common_style_unselected = null;
 
-  });
+    });
   }
 
 }

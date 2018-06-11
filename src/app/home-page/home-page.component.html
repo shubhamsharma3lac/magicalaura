@@ -130,7 +130,7 @@
 
   <div class="legend">
     <div class="legend-metals">
-      <h4 class="legend-header" style="grid-row: 1 / 2; grid-column: 1 / 7">Metals</h4>
+      <h4 (mouseover)="legendHover(' metal')" (mouseout)="legendHoverOut()" class="legend-header" style="grid-row: 1 / 2; grid-column: 1 / 7">Metals</h4>
       <span (mouseover)="legendHover('alkali metal')" (mouseout)="legendHoverOut()" class="legend-item alkali" style="grid-row: 2 / 3; grid-column: 1 /2">Alkali metal</span>
       <span (mouseover)="legendHover('alkaline')" (mouseout)="legendHoverOut()" class="legend-item alkaline" style="grid-row: 2 / 3; grid-column: 2 / 3">Alkaline Earth Metal</span>
       <span (mouseover)="legendHover('lanthanide')" (mouseout)="legendHoverOut()" class="legend-item lanthanide" style="grid-row: 2 / 3; grid-column: 3 / 4">Lanthanides</span>
@@ -147,7 +147,7 @@
       <span (mouseover)="legendHover('noble gas')" (mouseout)="legendHoverOut()" class="legend-item noble" style="grid-row: 2 / 3; grid-column: 2 / 3">Noble gas</span>
     </div>
     <div class="legend-unknown">
-      <h4 class="legend-header" style="margin-top: 10px">Unknown properties</h4>
+      <h4 (mouseover)="legendHover('unknown')" (mouseout)="legendHoverOut()" class="legend-header" style="margin-top: 10px">Unknown properties</h4>
     </div>
 
     <div class="legend-state">
