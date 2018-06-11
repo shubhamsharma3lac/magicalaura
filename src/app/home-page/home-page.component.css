@@ -179,7 +179,7 @@
     cursor: pointer;
     background: transparent;
     display: grid;
-    grid-template-columns: 134px auto;
+    grid-template-columns: 132px auto;
 }
 
 .active-element{
