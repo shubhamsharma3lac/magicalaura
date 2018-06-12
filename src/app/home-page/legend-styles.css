@@ -23,6 +23,13 @@
     background: hsl(17, 100%, 90%);
     text-align: center;
     width: auto;
+    border: 1px solid transparent;
+    padding: 16px 0px 0px 0px;
+    margin: 0px;
+    font-size: small;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 150ms linear;
 }
 
 .legend-nonmetals{
@@ -30,11 +37,19 @@
     display: grid;
     grid-template-rows: auto auto;
     grid-template-columns: auto auto;
+    border: 1px solid transparent;
 }
 
 .legend-unknown{
     grid-column: 4 / 5;
     background: lightgray;
+    border: 1px solid transparent;
+    padding: 16px 0px 0px 0px;
+    margin: 0px;
+    font-size: small;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 150ms linear;
 }
 
 .legend-header{
@@ -42,12 +57,37 @@
     font-size: small;
     font-weight: 500;
     padding: 4px;
+    cursor: pointer;
+    transition: 150ms linear;
+    display: inline-block;
+    border: 1px solid transparent;
 }
 
 .legend-item{
     font-size: x-small;
     font-weight: 400;
     padding: 8px 4px;
+    cursor: pointer;
+    transition: 150ms linear;
+    border: 1px solid transparent;
+    display: inline-block;
+}
+
+.legend-item:hover{
+    border: 1px solid black;
+}
+
+
+.legend-header:hover{
+    border: 1px solid black;
+}
+
+.legend-metalloid:hover{
+    border: 1px solid black;
+}
+
+.legend-unknown:hover{
+    border: 1px solid black;
 }
 
 .legend-state{

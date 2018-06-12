@@ -99,7 +99,7 @@
     grid-column: 2 / 3;
     display: grid;
     grid-template-rows: auto auto auto auto auto;
-    grid-template-columns: 20% 35% 25% 20%;
+    grid-template-columns: 25% 30% 25% 20%;
     text-align: center;
 }
 
@@ -142,6 +142,15 @@
     text-align: center;
     font-size: larger;
     display: block;
+}
+
+.active-element-jumbo-header{
+    text-align: center;
+    color: black;
+    grid-row: 1 / 2;
+    grid-column: 3 / 13;
+    font-weight: 700;
+    line-height: 54px;
 }
 
 .opacity-dark{
