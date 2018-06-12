@@ -8,7 +8,7 @@ import { PeriodicTableElementsData } from '../../assets/data-update';
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.css', './button-styles.css'],
+  styleUrls: ['./home-page.component.css', './button-styles.css', './element-colors.css', './element-styles.css', './legend-styles.css'],
   providers: []
 })
 export class HomePageComponent implements OnInit, OnDestroy {

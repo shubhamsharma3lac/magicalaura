@@ -1,45 +1,28 @@
 .app-grid{
     height: 100%;
     display: grid;
-    grid-template-rows: 90px 25px auto;
+    grid-template-rows: auto auto;
 }
 
 .header-flex-grid{
     text-align: left;
-    font-weight: 900;
     display: flex;
     align-content: center;
     background: #ffffff33;
     grid-row: 1 / 2;
+    height: 48px;
+    margin: 8px 0px;
 }
 
-.nav-flex-grid{
-    text-align: left;
-    align-content: center;
-    background: rgba(255, 255, 255, 0.2);
-    height:25px;
-    grid-row: 2 / 3;
-}
-
-router-outlet{
-    grid-row-start: 3;
-}
 
 .hero-header{
     flex-grow: 1;
     flex-shrink: 1;
-    margin-left: 12px;
+    margin: 0px 0px 0px 24px;
+    font-weight: lighter;
+    line-height: 48px;
 }
 
 .hero-header span:first-child{
-    color: seagreen;
-}
-
-.nav-item{
-    font-size: large;
-    margin: 0px 12px;
-}
-
-.nav-item:hover{
     color: seagreen;
 }

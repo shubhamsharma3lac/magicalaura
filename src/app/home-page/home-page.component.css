@@ -1,36 +1,36 @@
 .root-grid{
     display: grid;
-    grid-template-rows: 64px auto 12px auto auto;
-    grid-template-columns: 64px auto;
+    grid-template-rows: auto 54px auto 8px auto;
+    grid-template-columns: 54px auto;
     grid-column-gap: 4px;
     grid-row-gap: 4px;
     padding: 12px;
     align-content: center;
     justify-content: center; 
     background: whitesmoke;
-    margin: 8px auto;
+    margin: 0px auto;
     height: 100%;
 }
 
 .group-header-row{
     grid-column: 2 / 3;
-    grid-row: 1 / 2;
-    grid-template-columns: repeat(18, 64px);
+    grid-row: 2 / 3;
+    grid-template-columns: repeat(18, 54px);
     grid-column-gap: 4px;
     display: grid;
 }
 
 .period-header-column{
     grid-column: 1 / 2;
-    grid-row: 2 / 3;
-    grid-template-rows: repeat(7, 64px);
+    grid-row: 3 / 4;
+    grid-template-rows: repeat(7, 54px);
     grid-row-gap: 4px;
     display: grid;
 }
 
 .item{
-    height: 64px;
-    background: white;
+    height: 54px;
+    background:transparent;
     text-align: center;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -43,127 +43,33 @@
 }
 
 .elements-table{
-    grid-row: 2 / 3;
+    grid-row: 3 / 4;
     grid-column: 2 / 3;
     display: grid;
-    grid-template-columns: repeat(18, 64px);
-    grid-template-rows: repeat(7, 64px);
+    grid-template-columns: repeat(18, 54px);
+    grid-template-rows: repeat(7, 54px);
     grid-column-gap: 4px;
     grid-row-gap: 4px;
 }
 
-.element-symbol{
-    margin: 0px auto;
-    display: block;
-    font-size: normal;
-}
 
-.element-name{
-    text-align: center;
-    font-size: x-small;
-    display: block;
-}
-
-.element-atomic-number{
-    text-align: center;
-    font-size: x-small;
-    font-weight: 600;
-    display: block;
-}
-
-.element-atomic-weight{
-    text-align: center;
-    font-size: x-small;
-    display: block;
-}
 
 .off-elements-table{
-    grid-row: 4 / 5;
+    grid-row: 5 / 6;
     grid-column: 2 / 3;
     display: grid;
-    grid-template-columns: repeat(18, 64px);
-    grid-template-rows: repeat(2, 64px);
+    grid-template-columns: repeat(18, 54px);
+    grid-template-rows: repeat(2, 54px);
     grid-column-gap: 4px;
     grid-row-gap: 4px;
 }
 
-.alkali{
-    background: lightgreen !important;
-}
 
-.alkaline{
-    background:hsl(120, 73%, 85%) !important;
-}
-
-.metal{
-    background: gainsboro;
-}
-
-.transition{
-    background: hsl(351, 100%, 92%);
-
-}
-
-.post-transition{
-    background: lightpink;
-
-}
-
-.nonmetal{
-    background: lightyellow
-}
-
-.metalloid{
-    background: hsl(17, 100%, 90%);
-}
-
-.noble{
-    background: lightblue;
-}
-
-.probably{
-    background: lightgray !important;
-}
-
-.lanthanide{
-    background: lightsteelblue
-}
-
-.actinide{
-    background: hsl(214, 41%, 85%);
-}
 
 .off-elements-placeholder{
     text-align: center; 
-    line-height: 64px;
+    line-height: 54px;
     background: transparent;
-}
-
-.Solid{
-    color:  black;
-}
-
-.Liquid{
-    color:  green;
-
-}
-
-.Gas{
-    color:  hotpink;
-
-}
-
-.Unknown{
-    color:  slategray;
-
-}
-
-.header-even{
-    background: rgb(245, 240, 240);
-}
-
-.header-odd{
-    background: rgb(235, 235, 235);
 }
 
 .item:hover{
@@ -179,7 +85,7 @@
     cursor: pointer;
     background: transparent;
     display: grid;
-    grid-template-columns: 132px auto;
+    grid-template-columns: 112px auto;
 }
 
 .active-element{
@@ -214,27 +120,27 @@
 }
 
 .active-element-symbol{
-    margin: 0px;
+    margin: 0px auto;
     display: block;
-    font-size: xx-large;
+    font-size: x-large;
 }
 
 .active-element-name{
     text-align: center;
-    font-size: x-large;
+    font-size: large;
     display: block;
 }
 
 .active-element-atomic-number{
     text-align: center;
-    font-size: x-large;
+    font-size: large;
     font-weight: 600;
     display: block;
 }
 
 .active-element-atomic-weight{
     text-align: center;
-    font-size: large;
+    font-size: larger;
     display: block;
 }
 
@@ -246,75 +152,13 @@
     opacity: 0.2;
 }
 
-.legend{
-    height: auto;
-    background: white;
-    display: grid;
-    grid-column: 2 / 3;
-    grid-row-start: 5;
-    grid-template-columns: auto auto auto auto;
-    grid-template-rows: auto auto;
-    text-align: center;
-}
 
-.legend-metals{
-    background: gainsboro;
-    display: grid;
-    grid-template-columns: auto auto auto auto auto auto;
-    grid-template-rows: auto auto;
-    text-align: center;
-    grid-column: 1 / 2;
-}
-
-.legend-metalloid{
-    grid-column: 2 / 3;
-    background: hsl(17, 100%, 90%);
-    text-align: center;
-    width: auto;
-}
-
-.legend-nonmetals{
-    grid-column: 3 / 4;
-    display: grid;
-    grid-template-rows: auto auto;
-    grid-template-columns: auto auto;
-}
-
-.legend-unknown{
-    grid-column: 4 / 5;
-    background: lightgray;
-}
-
-.legend-header{
-    margin: 0px;
-    font-size: small;
-    font-weight: 600;
-    padding: 8px;
-}
-
-.legend-item{
-    font-size: x-small;
-    font-weight: 500;
-    padding: 4px 2px;
-}
-
-.legend-state{
-    grid-row: 2 / 3;
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    text-align: center;
-    margin-top: 8px 
-}
-
-.legend-state-item{
-    padding: 8px;
-    font-size: small;
-    font-weight: 500;
-}
 
 .header-name-root{
     text-align: center;
     background: transparent;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
 }
 
 .header-name-group{
@@ -323,15 +167,15 @@
     text-align: center;
     transform: rotate(-90deg);
     top: 13px;
-    left: 25px;
+    left: 20px;
 }
 
 .header-name-period{
     font-size: small;
     position: relative;
     text-align: center;
-    left: -12px;
-    top: 32px;
+    left: -5px;
+    top: 22px;
 }
 
 

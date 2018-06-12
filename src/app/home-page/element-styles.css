@@ -1,0 +1,31 @@
+.element-symbol{
+    margin: 4px auto;
+    display: block;
+    font-size: smaller;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.element-name{
+    text-align: center;
+    font-size: x-small;
+    display: block;
+    line-height: 1;
+}
+
+.element-atomic-number{
+    text-align: center;
+    font-size: x-small;
+    font-weight: 400;
+    display: block;
+    line-height: 1;
+    margin: 2px auto;
+}
+
+.element-atomic-weight{
+    text-align: center;
+    font-size: x-small;
+    display: block;
+    line-height: 1;
+    margin: 2px auto;
+}
