@@ -40,14 +40,14 @@
 .legend-header{
     margin: 0px;
     font-size: small;
-    font-weight: 600;
-    padding: 8px;
+    font-weight: 500;
+    padding: 4px;
 }
 
 .legend-item{
     font-size: x-small;
-    font-weight: 500;
-    padding: 8px 2px;
+    font-weight: 400;
+    padding: 8px 4px;
 }
 
 .legend-state{
@@ -55,11 +55,25 @@
     display: grid;
     grid-template-columns: auto auto auto auto;
     text-align: center;
-    margin-top: 8px 
+    margin-top: 0px 
 }
 
 .legend-state-item{
-    padding: 8px;
+    padding: 4px;
     font-size: small;
-    font-weight: 500;
+    font-weight: 400;
+}
+
+.legend-state-item-rect{
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.legend-state-item-name{
+    line-height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 8px;
 }

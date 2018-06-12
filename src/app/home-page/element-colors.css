@@ -61,3 +61,21 @@
 .Unknown{
     color:  slategray;
 }
+
+.SolidBg{
+    background:  black;
+}
+
+.LiquidBg{
+    background:  green;
+
+}
+
+.GasBg{
+    background:  hotpink;
+
+}
+
+.UnknownBg{
+    background:  slategray;
+}

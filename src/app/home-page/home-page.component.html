@@ -25,11 +25,11 @@
       <h4 (mouseover)="legendHover('unknown')" (mouseout)="legendHoverOut()" class="legend-header" style="margin-top: 10px">Unknown properties</h4>
     </div>
     <div class="legend-state">
-      <div class="legend-header" style="grid-column: 1 / 2;">Color of symbol shows state of matter (at 0 °C and 1 atm)</div>
-      <div class="legend-state-item Solid" style="grid-column: 2 / 3">Solid</div>
-      <div class="legend-state-item Liquid" style="grid-column: 3 / 4">Liquid</div>
-      <div class="legend-state-item Gas" style="grid-column: 4 / 5">Gas</div>
-      <div class="legend-state-item Unknown" style="grid-column: 5 / 6">Unknown</div>
+      <div class="legend-header" style="grid-column: 1 / 2;">State of matter (at 0 °C and 1 atm)</div>
+      <div class="legend-state-item" style="grid-column: 2 / 3"><span class="legend-state-item-rect SolidBg"></span> <span class="legend-state-item-name Solid">Solid</span></div>
+      <div class="legend-state-item" style="grid-column: 3 / 4"><span class="legend-state-item-rect LiquidBg"></span> <span class="legend-state-item-name Liquid">Liquid</span></div>
+      <div class="legend-state-item" style="grid-column: 4 / 5"><span class="legend-state-item-rect GasBg"></span> <span class="legend-state-item-name Gas">Gas</span></div>
+      <div class="legend-state-item" style="grid-column: 5 / 6"><span class="legend-state-item-rect UnknownBg"></span> <span class="legend-state-item-name Unknown">Unknown</span></div>
     </div>
   </div>
   <div class="group-header-row">
