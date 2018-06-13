@@ -77,6 +77,10 @@
     border: 1px solid slategray;
 }
 
+.legend-state-item:hover{
+    background: hsl(0, 0%, 90%);
+}
+
 
 .legend-header:hover{
     border: 1px solid slategray;
@@ -95,13 +99,15 @@
     display: grid;
     grid-template-columns: auto auto auto auto;
     text-align: center;
-    margin-top: 0px 
+    margin-top: 0px;
+    padding: 8px 0px;
 }
 
 .legend-state-item{
     padding: 4px;
     font-size: small;
     font-weight: 400;
+    cursor: pointer;
 }
 
 .legend-state-item-rect{
