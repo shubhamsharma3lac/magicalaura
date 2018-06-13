@@ -18,8 +18,7 @@ export class HomePageComponent implements OnInit, OnDestroy {
   public periodicTableData: PeriodicTableElementsData;
 
   public previousLegend: any;
-  public previousGroup: any;
-  public previousPeriod: any;
+  public previousLegendState: any;
 
   constructor(public http: HttpClient) {
     this.table = new PeriodicTable(http);
@@ -112,6 +111,7 @@ export class HomePageComponent implements OnInit, OnDestroy {
     }
 
     this.clearFilters();
+    this.clearLegendState();
 
     this.previousLegend = target;
     if (target.style.border != '1px solid black') {
@@ -132,6 +132,7 @@ export class HomePageComponent implements OnInit, OnDestroy {
     else {
       this.clearFilters();
       this.clearLegend();
+      this.clearLegendState();
       group.selected_style = 'header-item-selected';
       this.selectGroup(group);
     }
@@ -145,6 +146,7 @@ export class HomePageComponent implements OnInit, OnDestroy {
     else {
       this.clearFilters();
       this.clearLegend();
+      this.clearLegendState();
       period.selected_style = 'header-item-selected';
       this.selectPeriod(period);
     }
@@ -187,6 +189,59 @@ export class HomePageComponent implements OnInit, OnDestroy {
   clearLegend(){
     if (this.previousLegend)
       this.previousLegend.style.border = null;
+  }
+
+  clearLegendState(){
+    if (this.previousLegend)
+      this.previousLegendState.style.background = null;
+  }
+
+  legendStateClick(event: any, phase: string){
+    let target = event.target;
+
+    this.clearFilters();
+    this.clearLegend();
+
+    if(this.previousLegendState && this.previousLegendState.innerText != target.innerText){
+      this.previousLegendState.style.background = null;
+    }
+
+    this.previousLegendState = target;
+    if(target.style.background != 'rgb(225, 225, 225)'){
+      target.style.background = 'rgb(225, 225, 225)';
+      this.selectPhase(phase);
+    }
+    else
+    {
+      target.style.background = null;
+    }
+  }
+
+  selectPhase(phase: string){
+    this.table.elements.forEach((element) => {
+      if(element.phase.toLowerCase() == phase.toLowerCase()){
+        element.common_style_selected = 'opacity-dark';
+      }
+      else{
+        element.common_style_selected = 'opacity-faint';
+      }
+    })
+
+    this.table.offelements.forEach((element) => {
+      if(element.phase.toLowerCase() == phase.toLowerCase()){
+        element.common_style_selected = 'opacity-dark';
+      }
+      else{
+        element.common_style_selected = 'opacity-faint';
+      }
+    })
+  }
+
+  clrFiltersClick(){
+    this.clearFilters();
+    this.clearLegend();
+    this.clearActiveElements();
+    this.clearLegendState();
   }
 
 }

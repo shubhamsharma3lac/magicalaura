@@ -27,9 +27,12 @@
     <div class="legend-state">
       <div class="legend-header" style="grid-column: 1 / 2;">State of matter (at 0 °C and 1 atm)</div>
       <div (click)="legendStateClick($event, 'solid')" class="legend-state-item" style="grid-column: 2 / 3"><span class="legend-state-item-rect SolidBg"></span> <span class="legend-state-item-name Solid">Solid</span></div>
-      <div (click)="legendStateClick($event, 'solid')" class="legend-state-item" style="grid-column: 3 / 4"><span class="legend-state-item-rect LiquidBg"></span> <span class="legend-state-item-name Liquid">Liquid</span></div>
-      <div (click)="legendStateClick($event, 'solid')" class="legend-state-item" style="grid-column: 4 / 5"><span class="legend-state-item-rect GasBg"></span> <span class="legend-state-item-name Gas">Gas</span></div>
-      <div (click)="legendStateClick($event, 'solid')" class="legend-state-item" style="grid-column: 5 / 6"><span class="legend-state-item-rect UnknownBg"></span> <span class="legend-state-item-name Unknown">Unknown</span></div>
+      <div (click)="legendStateClick($event, 'liquid')" class="legend-state-item" style="grid-column: 3 / 4"><span class="legend-state-item-rect LiquidBg"></span> <span class="legend-state-item-name Liquid">Liquid</span></div>
+      <div (click)="legendStateClick($event, 'gas')" class="legend-state-item" style="grid-column: 4 / 5"><span class="legend-state-item-rect GasBg"></span> <span class="legend-state-item-name Gas">Gas</span></div>
+      <div (click)="legendStateClick($event, 'unknown')" class="legend-state-item" style="grid-column: 5 / 6"><span class="legend-state-item-rect UnknownBg"></span> <span class="legend-state-item-name Unknown">Unknown</span></div>
+    </div>
+    <div class="clear-filters-root">
+     <button (click)="clrFiltersClick()" class="clear-filters-button">Clear filters</button> 
     </div>
   </div>
   <div class="group-header-row">
@@ -140,8 +143,10 @@
         <span class="active-element-data-header-value" style="grid-row: 2/3; grid-column: 4/5">{{activeElement.electronegativity}}</span>
         <span class="active-element-data-header-name" style="grid-row: 3/4; grid-column: 3/4">Electron affinity</span>
         <span class="active-element-data-header-value" style="grid-row: 3/4; grid-column: 4/5">{{activeElement.electronAffinity}}</span>
-        <span class="active-element-data-header-name" style="grid-row: 4/5; grid-column: 3/4">Discovered</span>
-        <span class="active-element-data-header-value" style="grid-row: 4/5; grid-column: 4/5">{{activeElement.yearDiscovered}}</span>
+        <span class="active-element-data-header-name" style="grid-row: 4/5; grid-column: 3/4">Molar heat</span>
+        <span class="active-element-data-header-value" style="grid-row: 4/5; grid-column: 4/5">{{activeElement.molar_heat}}<span *ngIf="activeElement.molar_heat !== 'Unknown'"> J mol<sup>-1</sup>K<sup>-1</sup></span></span>
+        <span class="active-element-data-header-name" style="grid-row: 5 / 6; grid-column: 3/4">Discovered</span>
+        <span class="active-element-data-header-value" style="grid-row: 5 / 6; grid-column: 4/5">{{activeElement.yearDiscovered}}</span>
       </div>
     </div>
   </div>

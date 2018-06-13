@@ -102,13 +102,13 @@
     grid-column: 2 / 3;
     display: grid;
     grid-template-rows: auto auto auto auto auto;
-    grid-template-columns: 25% 30% 25% 20%;
+    grid-template-columns: 20% 30% 27% auto;
     text-align: center;
 }
 
 
 .active-element-data-header-name{
-    font-size: small;
+    font-size: 0.7em;
     text-align: left;
     padding: 0px 6px;
     display: inline-block;
@@ -116,7 +116,7 @@
 }
 
 .active-element-data-header-value{
-    font-size: small;
+    font-size: 0.7em;
     text-align: right;
     font-weight: 600;
     display: inline-block;
