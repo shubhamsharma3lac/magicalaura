@@ -111,9 +111,7 @@ export class Group {
         public name: string
     ) { }
 
-    public common_style_selected: Object;
-    public common_style_unselected: Object;
-
+    public selected_style: Object;
 }
 
 export class Period {
@@ -121,6 +119,5 @@ export class Period {
         public name: string
     ) { }
 
-    public common_style_selected: Object;
-    public common_style_unselected: Object;
+    public selected_style: Object;
 }

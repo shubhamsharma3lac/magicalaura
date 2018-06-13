@@ -33,13 +33,13 @@
     </div>
   </div>
   <div class="group-header-row">
-    <div (click)="groupClick($event)" (mouseover)="mouseOverGroup(group)" (mouseout)="mouseLeaveGroup(group)" class="item header-item"
+    <div (click)="groupClick($event, group)" class="item header-item {{group.selected_style}}"
       *ngFor="let group of table.groups; index as i">
       <span>{{group.name}}</span>
     </div>
   </div>
-  <div (click)="periodClick($event)" class="period-header-column">
-    <div (mouseover)="mouseOverPeriod(period)" (mouseout)="mouseLeavePeriod(period)" class="item header-item"
+  <div class="period-header-column">
+    <div (click)="periodClick($event, period)" class="item header-item {{period.selected_style}}"
       *ngFor="let period of table.periods; index as i">
       <span>{{period.name}}</span>
     </div>

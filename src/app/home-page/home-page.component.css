@@ -40,6 +40,8 @@
 
 .header-item{
     line-height: 54px;
+    width: 54px;
+    height: 54px;
     color: hsl(0, 0%, 50%);
 }
 
@@ -191,6 +193,11 @@
     text-align: center;
     left: -5px;
     top: 22px;
+}
+
+.header-item-selected{
+    font-weight: 600;
+    color: black;
 }
 
 

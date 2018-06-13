@@ -35,7 +35,7 @@ export class HomePageComponent implements OnInit, OnDestroy {
 
   }
 
-  mouseOverGroup(group: Group) {
+  selectGroup(group: Group) {
     this.table.elements.forEach((element) => {
       if (element.xpos.toString() === group.name) {
         element.common_style_selected = 'opacity-dark';
@@ -50,19 +50,7 @@ export class HomePageComponent implements OnInit, OnDestroy {
     })
   }
 
-  mouseLeaveGroup(group: Group) {
-    this.table.elements.forEach((element) => {
-      element.common_style_selected = null;
-      element.common_style_unselected = null;
-    })
-
-    this.table.offelements.forEach((element) => {
-      element.common_style_selected = null;
-      element.common_style_unselected = null;
-    })
-  }
-
-  mouseOverPeriod(period: Period) {
+  selectPeriod(period: Period) {
     this.table.elements.forEach((element) => {
       if (element.period.toString() === period.name) {
         element.common_style_selected = 'opacity-dark';
@@ -79,18 +67,6 @@ export class HomePageComponent implements OnInit, OnDestroy {
       else {
         element.common_style_unselected = 'opacity-faint';
       }
-    })
-  }
-
-  mouseLeavePeriod(period: Period) {
-    this.table.elements.forEach((element) => {
-      element.common_style_selected = null;
-      element.common_style_unselected = null;
-    })
-
-    this.table.offelements.forEach((element) => {
-      element.common_style_selected = null;
-      element.common_style_unselected = null;
     })
   }
 
@@ -128,7 +104,53 @@ export class HomePageComponent implements OnInit, OnDestroy {
     });
   }
 
-  deselectCategory() {
+  legendClick(event: any, category: string) {
+    let target = event.target;
+
+    if (this.previousLegend && this.previousLegend.innerText != target.innerText) {
+      this.previousLegend.style.border = null;
+    }
+
+    this.clearFilters();
+
+    this.previousLegend = target;
+    if (target.style.border != '1px solid black') {
+      target.style.border = '1px solid black';
+      this.selectCategory(category);
+    }
+    else {
+      target.style.border = null;
+    }
+  
+  }
+
+  groupClick(event: any, group: Group) {
+    this.clearActiveElements();
+    if (group.selected_style == 'header-item-selected') {
+      group.selected_style = null;
+    }
+    else {
+      this.clearFilters();
+      this.clearLegend();
+      group.selected_style = 'header-item-selected';
+      this.selectGroup(group);
+    }
+  }
+
+  periodClick(event: any, period: Period) {
+    this.clearActiveElements();
+    if (period.selected_style == 'header-item-selected') {
+      period.selected_style = null;
+    }
+    else {
+      this.clearFilters();
+      this.clearLegend();
+      period.selected_style = 'header-item-selected';
+      this.selectPeriod(period);
+    }
+  }
+
+  clearFilters() {
     this.table.elements.forEach(element => {
       element.common_style_selected = null;
       element.common_style_unselected = null;
@@ -140,40 +162,31 @@ export class HomePageComponent implements OnInit, OnDestroy {
       element.common_style_unselected = null;
 
     });
+
+    this.table.groups.forEach((group) => {
+      group.selected_style = null;
+    })
+
+    this.table.periods.forEach((period) => {
+      period.selected_style = null;
+    })
   }
 
-  legendClick(event: any, category: string) {
-    this.deselectCategory();
-    let target = event.target;
+  clearActiveElements(){
+    this.table.elements.forEach((element) => {
+      element.common_style_selected = null;
+      element.common_style_unselected = null;
+    })
 
-    if (this.previousLegend && this.previousLegend != target) {
+    this.table.offelements.forEach((element) => {
+      element.common_style_selected = null;
+      element.common_style_unselected = null;
+    })
+  }
+
+  clearLegend(){
+    if (this.previousLegend)
       this.previousLegend.style.border = null;
-    }
-
-    this.previousLegend = target;
-    if (target.style.border != '1px solid black') {
-      target.style.border = '1px solid black';
-      this.selectCategory(category);
-    }
-    else {
-      target.style.border = null;
-    }
-  }
-
-  groupClick(event: any) {
-    if (this.previousGroup) {
-      this.previousGroup.style.color = 'grey';
-    }
-    
-    let target = event.target;
-    this.previousGroup = target;
-    if (target.style.color != 'black') {
-      target.style.color = 'black';
-    }
-    else {
-      target.style.color = 'grey';
-
-    }
   }
 
 }
