@@ -17,6 +17,10 @@ export class HomePageComponent implements OnInit, OnDestroy {
   public activeElement: PeriodicTableElement;
   public periodicTableData: PeriodicTableElementsData;
 
+  public previousLegend: any;
+  public previousGroup: any;
+  public previousPeriod: any;
+
   constructor(public http: HttpClient) {
     this.table = new PeriodicTable(http);
     this.periodicTableData = new PeriodicTableElementsData();
@@ -104,7 +108,7 @@ export class HomePageComponent implements OnInit, OnDestroy {
     this.activeElement = new PeriodicTableElement();
   }
 
-  legendHover(category: string) {
+  selectCategory(category: string) {
     this.table.elements.forEach(element => {
       if (element.category.toLowerCase().includes(category)) {
         element.common_style_selected = 'opacity-dark';
@@ -124,7 +128,7 @@ export class HomePageComponent implements OnInit, OnDestroy {
     });
   }
 
-  legendHoverOut() {
+  deselectCategory() {
     this.table.elements.forEach(element => {
       element.common_style_selected = null;
       element.common_style_unselected = null;
@@ -136,6 +140,40 @@ export class HomePageComponent implements OnInit, OnDestroy {
       element.common_style_unselected = null;
 
     });
+  }
+
+  legendClick(event: any, category: string) {
+    this.deselectCategory();
+    let target = event.target;
+
+    if (this.previousLegend && this.previousLegend != target) {
+      this.previousLegend.style.border = null;
+    }
+
+    this.previousLegend = target;
+    if (target.style.border != '1px solid black') {
+      target.style.border = '1px solid black';
+      this.selectCategory(category);
+    }
+    else {
+      target.style.border = null;
+    }
+  }
+
+  groupClick(event: any) {
+    if (this.previousGroup) {
+      this.previousGroup.style.color = 'grey';
+    }
+    
+    let target = event.target;
+    this.previousGroup = target;
+    if (target.style.color != 'black') {
+      target.style.color = 'black';
+    }
+    else {
+      target.style.color = 'grey';
+
+    }
   }
 
 }

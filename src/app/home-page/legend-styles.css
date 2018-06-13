@@ -55,7 +55,7 @@
 .legend-header{
     margin: 0px;
     font-size: small;
-    font-weight: 500;
+    font-weight: 400;
     padding: 4px;
     cursor: pointer;
     transition: 150ms linear;
@@ -74,20 +74,20 @@
 }
 
 .legend-item:hover{
-    border: 1px solid black;
+    border: 1px solid slategray;
 }
 
 
 .legend-header:hover{
-    border: 1px solid black;
+    border: 1px solid slategray;
 }
 
 .legend-metalloid:hover{
-    border: 1px solid black;
+    border: 1px solid slategray;
 }
 
 .legend-unknown:hover{
-    border: 1px solid black;
+    border: 1px solid slategray;
 }
 
 .legend-state{

@@ -110,10 +110,17 @@ export class Group {
     constructor(
         public name: string
     ) { }
+
+    public common_style_selected: Object;
+    public common_style_unselected: Object;
+
 }
 
 export class Period {
     constructor(
         public name: string
     ) { }
+
+    public common_style_selected: Object;
+    public common_style_unselected: Object;
 }

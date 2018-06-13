@@ -38,8 +38,9 @@
     cursor: pointer;
 }
 
-.group-name{
-    line-height: 100%;
+.header-item{
+    line-height: 54px;
+    color: hsl(0, 0%, 50%);
 }
 
 .elements-table{
@@ -109,6 +110,7 @@
     text-align: left;
     padding: 0px 6px;
     display: inline-block;
+    font-weight: 400;
 }
 
 .active-element-data-header-value{
@@ -123,18 +125,20 @@
     margin: 0px auto;
     display: block;
     font-size: x-large;
+    font-weight: 600;
 }
 
 .active-element-name{
     text-align: center;
     font-size: large;
     display: block;
+    font-weight: 400;
 }
 
 .active-element-atomic-number{
     text-align: center;
     font-size: large;
-    font-weight: 600;
+    font-weight: 400;
     display: block;
 }
 
@@ -142,6 +146,7 @@
     text-align: center;
     font-size: larger;
     display: block;
+    font-weight: 400;
 }
 
 .active-element-jumbo-header{
@@ -159,6 +164,7 @@
 
 .opacity-faint{
     opacity: 0.2;
+    pointer-events: none;
 }
 
 
