@@ -12,6 +12,10 @@
 
 .transition{
     background: hsl(351, 100%, 92%);
+}
+
+.pre-transition{
+    background: hsl(351, 100%, 92%);
 
 }
 
@@ -32,7 +36,7 @@
     background: lightblue;
 }
 
-.probably{
+.unknown{
     background: lightgray !important;
 }
 
